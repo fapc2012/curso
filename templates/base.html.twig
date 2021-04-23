@@ -10,10 +10,26 @@
         {% endblock %}
 
         {% block javascripts %}
-            {#{{ encore_entry_script_tags('app') }}#}
+            {#{{ encore_entry_script_tags('app') }}
+            {{ encore_entry_script_tags('user') }}#}
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <h1>Primer curso de Symfony</h1>
+
+               
+
+                {% for nro in 1..20 %}  {#punto 3a, del trabajo practico 2#} 
+
+                        {% if nro == 1  %} {#punto 3b, del trabajo practico 2#}                      
+                         <div>Título Principal del Curso</div>        
+                        {% endif %}
+
+                    <div>{{ 'curso nro'|upper}} {{nro}} {{'de symfony'|upper }}</div> {#punto 3a, del trabajo practico 2#}   
+                
+                {% endfor %}
+
+        {% endblock %}
     </body>
 </html>
